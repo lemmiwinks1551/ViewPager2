@@ -32,10 +32,14 @@ public class PageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View result=inflater.inflate(R.layout.fragment_page, container, false);
+        View result = inflater.inflate(R.layout.fragment_page, container, false);
         TextView pageHeader = result.findViewById(R.id.displayText);
-        String header = "Фрагмент " + (pageNumber+1);
-        pageHeader.setText(header);
+        String header = "Фрагмент " + (pageNumber + 1);
+        if (pageNumber % 2 == 0) {
+            pageHeader.setText("нечет");
+        } else  {
+            pageHeader.setText(header);
+        }
         return result;
     }
 

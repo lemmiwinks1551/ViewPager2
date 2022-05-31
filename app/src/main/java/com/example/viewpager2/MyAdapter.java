@@ -13,11 +13,13 @@ public class MyAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
+        // По номеру страницы, передаваемому в качестве параметра position, возвращает объект фрагмента
         return (PageFragment.newInstance(position));
     }
 
     @Override
     public int getItemCount() {
+        // Возвращает количество страниц, которые будут в ViewPager2
         return 10;
     }
 }
